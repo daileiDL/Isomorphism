@@ -1,0 +1,48 @@
+{
+  "name": "jq-paginator",
+  "version": "2.0.1",
+  "description": "基于 jQuery 的多功能分页控件",
+  "main": "./index.js",
+  "scripts": {
+    "beforecommit": "npm run test",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "elint lint \"+(src|test)/**/*.js\" \"index.js\" --fix",
+    "test:unit": "karma start",
+    "prebuild": "rimraf ./dist",
+    "build": "rollup --config"
+  },
+  "devDependencies": {
+    "elint": "^1.9.0",
+    "elint-preset-kw": "^1.0.3",
+    "jquery": "^3.3.1",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^1.0.0",
+    "rollup-plugin-terser": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keenwon/jqPaginator.git"
+  },
+  "keywords": [
+    "jQuery",
+    "paginator",
+    "pagination"
+  ],
+  "author": {
+    "name": "keenwon",
+    "email": "semanwmj@gmail.com",
+    "url": "http://keenwon.com"
+  },
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keenwon/jqPaginator/issues"
+  },
+  "homepage": "https://github.com/keenwon/jqPaginator#readme"
+}

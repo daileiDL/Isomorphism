@@ -1,0 +1,112 @@
+<!--index.html-->
+{{extend 'pages:common/pages/layout.html'}}
+
+{{block 'title'}}首页{{/block}}
+
+{{block 'head'}}
+<!--injectcss-->
+{{/block}}
+
+{{block 'content'}}
+
+{{ include "components:list/list.html" }} 
+
+<!-- <x-booklist></x-booklist> -->
+
+<div id="page" class="pagination"></div>
+
+<!-- 添加模态框 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">添加图书</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="book_name" class="col-sm-2 control-label">书名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="book_name" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="book_author" class="col-sm-2 control-label">作者</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="book_author">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="book_publish" class="col-sm-2 control-label">出版社</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="book_publish">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="book_date" class="col-sm-2 control-label">出版日期</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="book_date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="book_summary" class="col-sm-2 control-label">简介</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="book_summary">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="book_remark" class="col-sm-2 control-label">备注</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="book_remark">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" id="addbook" class="btn btn-primary">保存</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{{/block}}
+
+{{block 'script'}}
+<!-- <script src="/script/jqPaginator-2.0.1/dist/jq-paginator.min.js"></script> -->
+<!-- <script src="/js/dl.js"></script>
+<script type="module">
+    console.log("我支持module");
+        import("/js/add.js").then((_)=>{
+            const book = new _.default;
+            console.log(book)
+            book.add();
+        });
+</script>
+<script type="nomodule" src="https://cdn.staticfile.org/systemjs/3.0.0/system.js"></script>
+<script type="nomodule">
+    System.import('/js/add-bundle.js').then((_)=>{
+            const book = new _.default;
+            book.add();
+        });
+</script> -->
+<!-- <script>
+    $('#page').jqPaginator({
+        totalPages: parseInt('{{pages.pageCount}}'),
+        visiblePages: 8,
+        currentPage: parseInt('{{pages.currentPage}}'),
+        first: '<li><a href="javascript:void(0);">首页</a></li>',
+        prev: '<li><a href="javascript:void(0);">上一页</a></li>',
+        next: '<li><a href="javascript:void(0);">下一页</a></li>',
+        last: '<li><a href="javascript:void(0);">尾页</a></li>',
+        page: '<li><a href="javascript:void(0);">\{\{page\}\}</a></li>',
+        onPageChange: function (num, type) {
+            console.log(num, type);
+            if (type == 'change') {
+                location.href = "/?book_name={{querys.book_name || ''}}&page=" + num;
+            }
+        }
+    });
+</script> -->
+<!--injectjs-->
+{{/block}}

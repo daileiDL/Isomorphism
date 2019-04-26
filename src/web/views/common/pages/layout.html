@@ -1,0 +1,63 @@
+<!--layout.html-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="PsAN2KB39puMBWEJ9hyX982OYNFFECVTJjhvJ5j4g-xYgkrrwTDH3-J2V327bdCBl-EEkmh_bn5jfS5f94DqtQ==">
+    <title>{{block 'title'}}My Site{{/block}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--injectcss-->
+    {{block 'head'}}{{/block}}
+</head>
+
+<body>
+
+    <div class="wrap">
+        <nav id="w0" class="navbar-inverse navbar-fixed-top navbar">
+            <div class="container">
+                <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#w0-collapse"><span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span></button><a class="navbar-brand" href="/admin/book">物资采购平台</a></div>
+                <div id="w0-collapse" class="collapse navbar-collapse">
+                    <ul id="w1" class="navbar-nav navbar-right nav">
+                        <li><a href="/index/index">采购信息</a></li>
+                        <li><a href="/index/category">物资分类</a></li>
+                        <!-- <li><a href="/">登录</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container" id="app">
+            {{block 'content'}}{{/block}}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-left">&copy; 代磊 2019</p>
+
+            <p class="pull-right"></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+    <script src="https://cdn.staticfile.org/quicklink/1.0.0/quicklink.umd.js"></script>
+    <script>
+        // quicklink({
+        //     urls: ['/scripts/index-category.bundle.js']
+        // });
+        // $(document).pjax('a', '#app')
+    </script>
+    <!--injectjs-->
+    {{block 'script'}}{{/block}}
+</body>
+
+</html>

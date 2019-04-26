@@ -1,0 +1,6 @@
+.components-list {
+    & .test {
+        height: 50px;
+        background-color: yellowgreen;
+    }
+}
